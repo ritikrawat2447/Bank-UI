@@ -98,7 +98,7 @@ fun HomeScreen(navController: NavController) {
                 modifier = Modifier.padding(bottom = 130.dp),
                 containerColor = Color.White
             ) {
-                Icon(
+                Image(
                     painter = painterResource(id = R.drawable.chatbot_speech_bubble_1),
                     contentDescription = "Drawable Icon",
                     modifier = Modifier.size(40.dp)
@@ -130,7 +130,7 @@ fun HomeScreen(navController: NavController) {
                     fontFamily = FontFamily(Font(R.font.montserrat)),
                     fontSize = 16.sp,
                     color = colorResource(id = R.color.text_color),
-                    fontWeight = FontWeight.Black,
+                    fontWeight = FontWeight.Bold,
                     modifier = Modifier.align(Alignment.CenterHorizontally)
                 )
 
@@ -197,15 +197,19 @@ fun ServicesView(icon: Int, title: String) {
         )
     ) {
         Column(
-            modifier = Modifier.padding(4.dp)
+            modifier = Modifier
+                .padding(8.dp)
+                .fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Icon(
+            Image(
                 painter = painterResource(id = icon),
-                contentDescription = "Drawable Icon",
-                modifier = Modifier.size(24.dp).align(Alignment.CenterHorizontally)
+                contentDescription = "Service Image",
+                modifier = Modifier.size(24.dp)
             )
             Spacer(modifier = Modifier.height(4.dp))
-            Text(text = title, fontSize = 12.sp , color = Color.Black, modifier = Modifier.align(Alignment.CenterHorizontally))
+            Text(text = title, fontSize = 12.sp, fontWeight = FontWeight.Bold, color = Color.Black)
         }
     }
 }
@@ -217,11 +221,11 @@ data class ServicesData(
 
 object dummy {
     val allServicesData = listOf(
-        ServicesData(R.drawable.wallet_43_1, "Account \n Details"),
-        ServicesData(R.drawable.vector, "Recent \n Transaction"),
-        ServicesData(R.drawable.credit_card_2, "Card \n Details"),
-        ServicesData(R.drawable.credit_card_in_1, "Locate \n ATM"),
-        ServicesData(R.drawable.bank, "Locate \n Branch"),
-        ServicesData(R.drawable._9, "Open \n Account")
+        ServicesData(R.drawable.wallet_43_1, "Account\nDetails"),
+        ServicesData(R.drawable.vector, "Recent\nTransaction"),
+        ServicesData(R.drawable.credit_card_2, "Card\nDetails"),
+        ServicesData(R.drawable.credit_card_in_1, "Locate\nATM"),
+        ServicesData(R.drawable.bank, "Locate\nBranch"),
+        ServicesData(R.drawable._9, "Open\nAccount")
     )
 }
